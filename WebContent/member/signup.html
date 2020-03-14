@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입</title>
+		<script type="text/javascript">
+			function checkAction(actionName){
+				if('I' == actionName){
+					document.regForm.action = "/mvc1Project/member/insertMember.jsp";
+					alert(document.regForm.action);
+				}
+				if('S' == actionName){
+					document.regForm.action = "/mvc1Project/member/selectMember.jsp";
+					alert(document.regForm.action);
+				}
+				if('U' == actionName){
+					document.regForm.action = "/mvc1Project/member/updateMember.jsp";
+					alert(document.regForm.action);
+				}
+				if('D' == actionName){
+					document.regForm.action = "/mvc1Project/member/deleteMember.jsp";
+					alert(document.regForm.action);
+				}
+				document.regForm.submit();
+			}
+		</script>
+		<style type="text/css">
+		
+			.reg {
+			text-align: center;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<form class="reg" name="regForm" id="regForm" method="post">
+			 <table border="1">
+			 	<tr>
+			 		<th colspan="2" align="center">회원정보</th>
+			 	</tr>
+			 	<tr>
+			 		<td width="100">회원번호</td>
+			 		<td width="250">
+			 			&nbsp;<input type="text" name="knum" id="knum"><br>
+			 			<font size="2">*수정/삭제/조회 시 회원번호 사용</font>
+			 		</td>
+			 	</tr>
+			 	<tr>
+			 		<td>이름</td>
+			 		<td>&nbsp;<input type="text" name="kname" id="kname" placeholder="이름을 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>ID</td>
+			 		<td>&nbsp;<input type="text" name="kid" id="kid" placeholder="특수문자는 포함되지 않습니다."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>PASSWORD</td>
+			 		<td>&nbsp;<input type="text" name="kpw" id="kpw" placeholder="8자리 이상 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>생년월일</td>
+			 		<td>&nbsp;<input type="text" name="kbirth" id="kbirth" placeholder="숫자만 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>성별</td>
+			 		<td>&nbsp;<input type="text" name="kgender" id="kgender" placeholder="M/F로 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>EMAIL</td>
+			 		<td>&nbsp;<input type="text" name="kemail" id="kemail" placeholder="이메일주소를 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>연락처</td>
+			 		<td>&nbsp;<input type="text" name="kmobile" id="kmobile" placeholder="-없이 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>우편번호</td>
+			 		<td>&nbsp;<input type="text" name="kpostnum" id="kpostnum" placeholder="우편 번호 5자리를 입력하세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>주소</td>
+			 		<td>&nbsp;<input type="text" name="kaddr" id="kaddr" placeholder="도로명 주소로 입력해주세요."></td>
+			 	</tr>
+			 	<tr>
+			 		<td>삭제여부</td>
+			 		<td>&nbsp;<input type="text" name="kdeleteyn" id="kdeleteyn" disabled="disabled" ></td>
+			 	</tr>
+			 	<tr>
+			 		<td>등록일</td>
+			 		<td>&nbsp;<input type="text" name="kinsertdate" id="kinsertdate" disabled="disabled" ></td>
+			 	</tr>
+			 	<tr>
+			 		<td>수정일</td>
+			 		<td>&nbsp;<input type="text" name="kupdatedate" id="kupdatedate" disabled="disabled" ></td>
+			 	</tr>
+			 	<tr>
+			 		<td colspan="2">
+			 		<input type="button" value="입력" onclick="checkAction('I');">
+			 		<input type="button" value="조회" onclick="checkAction('S');">
+			 		<input type="button" value="수정" onclick="checkAction('U');">
+			 		<input type="button" value="삭제" onclick="checkAction('D');">
+			 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 		<input type="reset" value="다시">
+			 		</td>
+			 	</tr>
+			 </table>
+		</form>
+	</body>
+</html>

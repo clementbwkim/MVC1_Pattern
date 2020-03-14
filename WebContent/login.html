@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>로그인</title>
+			<style type="text/css">
+				.log{
+					text-align: center;
+				}
+			</style>
+			<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" >
+			</script>
+			<script>
+				$(function(){
+					$("#regbtn").click(function(){
+						$("#logform").attr("action", "/mvc1Project/member/signup.html").submit();
+					});
+					$("#logbtn").click(function(){
+						$("#logform").attr("action", "/mvc1Project/board/selectBoard.jsp").submit();
+					});
+				});
+			</script>
+	</head>
+	<body>
+		<form class="log" name="logform" id="logform">
+			<table border="1">
+				<tr>
+					<th colspan="2">Sign in</th>
+				</tr>
+				<tr>
+					<td>ID</td>
+					<td><input type="text" name="kid" id="kid"></td>
+				</tr>
+				<tr>
+					<td>PASSWORD</td>
+					<td><input type="text" name="kpw" id="kpw"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="확인" name="logbtn" id="logbtn">
+						<input type="reset" value="다시">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" value="회원가입" name="regbtn" id="regbtn">
+					</td>
+				</tr>
+			</table>
+		
+		</form>
+	</body>
+</html>
